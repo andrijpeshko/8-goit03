@@ -22,17 +22,17 @@ refs.form.addEventListener('submit', onFormSubmit);
 
 
 function onFormInput(e) {
-  currentFormData = {
+  
+  const value = JSON.stringify(currentFormData = {
     ...currentFormData,
     [e.target.name]: e.target.value,
-  };
-  const value = JSON.stringify(currentFormData);
+  });
   localStorage.setItem(STORAGE_KEY, value);
 }
 
 function onFormSubmit(e) {
   e.preventDefault();
-  currentFormData = formData;
+  
   const value = JSON.stringify(FormData);
   localStorage.setItem(STORAGE_KEY, value);
   refs.form.reset();
